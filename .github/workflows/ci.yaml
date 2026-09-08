@@ -29,7 +29,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./terraform-configs
-          file: ./terraform-configs/DOckerfile
+          file: ./terraform-configs/Dockerfile
           push: true
           tags: |
             julian210/complete-devops-project:${{ env.SHORT_SHA }}
