@@ -28,7 +28,8 @@ jobs:
       - name: Build and Push Image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./terraform-configs
+          file: ./terraform-configs/DOckerfile
           push: true
           tags: |
             julian210/complete-devops-project:${{ env.SHORT_SHA }}
