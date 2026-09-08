@@ -36,13 +36,3 @@ jobs:
             julian210/complete-devops-project:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-      - name: Update Helm Chart Tag
-        run: |
-          sed -i "s/tag:.*/tag: \"${{ env.SHORT_SHA }}\"/" helm/app-chart/values.yaml
-
-      - name: Commit Helm Update
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update image tag to ${{ env.SHORT_SHA }}"
-          branch: main
