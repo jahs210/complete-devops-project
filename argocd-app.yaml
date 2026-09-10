@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: "https://github.com/jahs210/complete-devops-project.git"
     targetRevision: main
-    path: helm/app-chart
+    path: complete-devops-project-time-printer
   destination:
     server: "https://kubernetes.default.svc"
     namespace: default
