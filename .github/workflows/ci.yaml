@@ -36,3 +36,13 @@ jobs:
             julian210/complete-devops-project:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+      - name: Configure Git Author
+        run: |
+          git config --local user.email "hello@julian210.com"
+          git config --local user.name "julian01"    
+      - name: Update Helm Chart with new image tag
+        run: | 
+          sed -i "s/tag:.*/tag: ${{ env.SHORT_SHA }}/" ./complete-devops-project-time-printer/values.yaml
+          git add ./complete-devops-project-time-printer/values.yaml
+          git commit -m "Update image tag to ${{ env.SHORT_SHA }}"
+          git push 
