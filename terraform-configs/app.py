@@ -9,6 +9,6 @@ def get_curent_time():
     return f"the current time of the day Friday 19:17: {current_time}"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host="0.0.0.0", port=5000)
 
     
